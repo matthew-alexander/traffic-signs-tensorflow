@@ -1,0 +1,88 @@
+note on traffic signs 
+
+for help understanding the session: 
+https://www.tensorflow.org/versions/r0.11/get_started/basic_usage.html
+
+Some benchmarks for the MNist database
+http://yann.lecun.com/exdb/mnist/
+
+notes from cs231n: 
+
+cnn: http://cs231n.github.io/convolutional-networks/#layerpat
+
+example with MINST https://tensorhub.com/aymericdamien/tensorflow-convnet
+
+
+vivek yadav	[11:12 PM]  
+Most likely not. But you can try.
+ Konstantin Domnitser
+Maybe if I ran the network enough times, the largest logits would eventually achieve positive values and my network would learn even with a ReLU at the end?
+Posted in #p-traffic-signsNov 21st at 11:10 PM 
+
+[11:13]  
+One reason not ot include relu before softmax is that we are interpretting netowrk output before softmax as unnormalized log probabilities. So a class with very low score should have very high negative score
+
+[11:15]  
+as in you want wrong class to have a vry large negative score, and true class to have large positive score. I.e. most linear separation between true class and wrong classes
+
+[11:16]  
+if you use relu there, you will lose the information between wrong class and true class. Take example of 2 weights that give scores, 1 and -10 and  1 and -100.
+
+[11:16]  
+we want to prefer the second one, because it gives larger gap between class labels
+
+[11:17]  
+by using relu, you are making those two outputs 1 and 0, which in effects takes away information about how well the wrights separate the two classes.
+
+[11:17]  
+So last layer must be linear :slightly_smiling_face:
+
+------------------------------------------------
+def color2rgb(image):
+    gray = 0.2989 * image[:,:,0] + 0.5870 * image[:,:,1] + 0.1140 * image[:,:,2]
+    return gray
+
+
+
+
+------------------------------------------------------
+#conv1    convolution and rectified linear activation.
+#pool1    max pooling.
+#norm1    local response normalization.
+#conv2    convolution and rectified linear activation.
+#norm2    local response normalization.
+#pool2    max pooling.
+#local3    fully connected layer with rectified linear activation.
+#local4    fully connected layer with rectified linear activation.
+#softmax_linear    linear transformation to produce logits.
+
+----------------------------------------------------
+
+http://cs231n.github.io/assignments2016/assignment2/
+
+------------------------
+GPU  -- this looks like it will be some work 
+https://www.tensorflow.org/versions/r0.11/how_tos/using_gpu/index.html
+
+http://learningtensorflow.com/lesson10/
+
+https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html
+
+
+Going through these looks worth while
+http://learningtensorflow.com
+http://cs231n.github.io/assignments2016/assignment2/
+
+another example: 
+https://tensorhub.com/aymericdamien/tensorflow-convnet
+same?: https://github.com/aymericdamien/TensorFlow-Examples/blob/master/notebooks/3_NeuralNetworks/convolutional_network.ipynb
+
+
+fun example of cucumbers
+https://cloud.google.com/blog/big-data/2016/08/how-a-japanese-cucumber-farmer-is-using-deep-learning-and-tensorflow
+
+
+http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf
+
+jittering: 
+https://carnd-udacity.atlassian.net/wiki/cq/viewquestion.action?id=10322627&questionTitle=project-2-unbalanced-data-generating-additional-data-by-jittering-the-original-image

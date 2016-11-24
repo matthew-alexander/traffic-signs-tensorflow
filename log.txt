@@ -4,3 +4,11 @@ iterations, learning_rate, batch_size, keep_prob, compute_time, accuracy
 
 20,0.001,100,0.8,0:00:02,0.04
 20,0.001,100,0.8,0:00:02,0.04
+1000,0.01,100,0.8,0:01:16,0.05
+1000,0.001,100,0.8,0:01:18,0.47
+1000,0.001,100,0.9,0:01:18,0.57
+1000,0.001,100,0.9,0:01:17,0.73went with image normalization (min-max)
+1000,0.001,100,0.9,0:01:17,0.73,went with image normalization (min-max)
+1000,0.001,100,0.9,0:00:51,0.75,normalization and changed filters to 4x4px
+1000,0.001,1000,0.9,0:08:14,0.78,normalization and changed filters to 4x4px
+20000,0.001,1000,0.9,3:31:06,0.85,normalization and changed filters to 4x4px
