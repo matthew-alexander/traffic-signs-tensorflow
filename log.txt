@@ -37,3 +37,7 @@ iterations, learning_rate, batch_size, keep_prob, compute_time, accuracy
 300000,0.001,100,0.9,6:49:44,0.86,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
 50000,0.001,100,0.9,1:08:03,0.82,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
 100000,0.001,100,0.9,2:17:01,0.83,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
+5,0.001,100,0.9,0:00:04,0.05,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
+5,0.001,100,0.9,0:00:01,0.06,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
+5,0.001,100,0.9,0:00:01,0.06,normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
+100000,0.001,100,0.9,2:15:49,0.85,improved normalization and changed filters to 4x4px. uses an augmented dataset (40x), submission-model
